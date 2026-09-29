@@ -1,0 +1,37 @@
+1.Query:
+?- female(Person).
+
+Person = sara ;
+Person = nora.
+
+2.Query:
+?- male(Person).
+
+Person = ali ;
+Person = ahmad ;
+Person = muhammad ;
+Person = faisal ;
+Person = hassan ;
+Person = khan.
+
+3.Query:
+?- parent(Grandparent, Parent), parent(Parent, faisal).
+
+Grandparent = ali,
+Parent = muhammad.
+
+4.Query:
+?- female(Daughter), parent(ahmad, Daughter).
+
+Daughter = sara ;
+Daughter = nora.
+
+5.Query:
+?- parent(CommonParent, ahmad), parent(CommonParent, muhammad).
+
+CommonParent = ali.
+
+6.Query:
+?- male(khan), parent(Parent, khan), parent(Parent, nora).
+
+Parent = ahmad.

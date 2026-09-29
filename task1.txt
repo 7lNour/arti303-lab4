@@ -1,0 +1,93 @@
+1. Query:
+   ?- house = house.
+
+Result:
+true.
+
+Explanation:
+Both terms are identical, so they can be unified.
+
+2. Query:
+   ?- house = abc.
+
+Result:
+false.
+
+Explanation:
+house and abc are different atoms, so they cannot be unified.
+
+3. Query:
+   ?- edge(a,b) = edge(C,b).
+
+Result:
+C = a.
+
+Explanation:
+C can be unified with a, while b is already the same on both sides.
+
+4. Query:
+   ?- edge(a,d) = edge(C,B).
+
+Result:
+C = a,
+B = d.
+
+Explanation:
+C is unified with a, and B is unified with d.
+
+5. Query:
+   ?- edge(C,B) = edge(a,d).
+
+Result:
+C = a,
+B = d.
+
+Explanation:
+C is unified with a, and B is unified with d.
+
+6. Query:
+   ?- edge(A,f(g,h)) = edge(a,B).
+
+Result:
+A = a,
+B = f(g,h).
+
+Explanation:
+A is unified with a, and B is unified with f(g,h).
+
+7. Query:
+   ?- edge(A,A) = edge(b,c).
+
+Result:
+false.
+
+Explanation:
+A cannot be both b and c at the same time, so the terms cannot be unified.
+
+8. Query:
+   ?- edge(A,A) = edge(b,b).
+
+Result:
+A = b.
+
+Explanation:
+Both arguments are b, so A can be unified with b.
+
+9. Query:
+   ?- A = B, B = f.
+
+Result:
+A = B,
+B = f.
+
+Explanation:
+A and B are unified, and then both are unified with f.
+
+10. Query:
+    ?- A = B, B = f, A = e.
+
+Result:
+false.
+
+Explanation:
+A and B are already unified with f, so A cannot also be e.
